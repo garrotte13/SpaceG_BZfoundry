@@ -50,7 +50,7 @@ if mods.Krastorio2 then
   util.add_prerequisite("foundry", "kr-stone-processing")
 elseif mods["aai-industry"] then
   util.add_prerequisite("foundry", "sand-processing")
-else
+elseif not mods["SpaceG"] then
   util.add_prerequisite("foundry", "silica-processing")
 end
 
