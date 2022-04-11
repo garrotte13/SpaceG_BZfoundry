@@ -2,8 +2,13 @@ local util = require("data-util")
 
 if util.me.enable() then
   util.set_to_founding("steel-plate")
-  util.replace_some_ingredient("steel-plate", "iron-plate", 1, util.me.carbon(), 1)
-  util.multiply_time("steel-plate", 4/5)
+  if mods["SpaceG"] then
+    util.add_ingredient("steel-plate", util.me.carbon(), 1)
+  else
+    util.replace_some_ingredient("steel-plate", "iron-plate", 1, util.me.carbon(), 1)
+    util.multiply_time("steel-plate", 4/5)
+  end
+
   util.add_prerequisite("steel-processing", "foundry")
 
   util.set_to_founding("tungsten-carbide")
@@ -29,7 +34,7 @@ else
       end
     end
   end
-  util.add_crafting_category("assembling-machine", "inustrial-furnace", "founding")
+  util.add_crafting_category("assembling-machine", "industrial-furnace", "founding")
   util.add_crafting_category("assembling-machine", "kr-advanced-furnace", "founding")
 end
 

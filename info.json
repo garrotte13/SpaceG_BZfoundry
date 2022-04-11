@@ -1,9 +1,9 @@
 {
     "name": "bzfoundry",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "factorio_version": "1.1",
     "title": "Foundry",
-    "author": "Brevven",
+    "author": "Brevven, garrotte",
     "contact": "",
     "homepage": "",
     "dependencies": [

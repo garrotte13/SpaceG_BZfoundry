@@ -4,7 +4,7 @@ local foundry_ingredients = {{"stone-brick", 20}, {"iron-plate", 10}, {"copper-p
 if mods.bzlead then table.insert(foundry_ingredients, {"lead-plate", 8}) end
 if mods.Krastorio2 or mods["aai-industry"] then
   table.insert(foundry_ingredients, {"sand", 10})
-elseif data.raw.item["silica"] and data.raw.technology["silica-processing"] then
+elseif data.raw.item["silica"] and data.raw.technology["silica-processing"] and (not mods["SpaceG"]) then
   table.insert(foundry_ingredients, {"silica", 20})
 end
 
