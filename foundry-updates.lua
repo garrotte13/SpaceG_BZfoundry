@@ -20,6 +20,7 @@ if util.me.enable() then
 
   util.set_to_founding("cermet")  -- from zirconium
   util.set_to_founding("crucible") -- from graphite
+  if util.me.carbonrecipe() == "coke" and mods["SpaceG"] then util.add_crafting_category("furnace", "electric-furnace", "coking") end
 else
   -- If we're not using Foundry buildings, add founding recipes to assemblers in vanilla, or furnaces in K2
   local sought = mods.Krastorio2 and "smelting" or "crafting" 
@@ -35,7 +36,7 @@ else
     end
   end
   util.add_crafting_category("assembling-machine", "industrial-furnace", "founding")
-  util.add_crafting_category("assembling-machine", "kr-advanced-furnace", "founding")
+  util.add_crafting_category("assembling-machine", "kr-advanced-furnace", "founding")  
 end
 
 for i, machine in pairs(util.me.get_other_machines()) do

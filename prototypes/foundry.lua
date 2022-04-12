@@ -29,11 +29,12 @@ data:extend({
   {
     type = "technology",
     name = "foundry",
-    icon_size = 256,
-    icon = "__bzfoundry__/graphics/icons/technology/foundry.png",
+    icon_size = 128,
+    icon = "__bzfoundry__/graphics/icons/spaceG/apm_coking_plant_2.png",
     prerequisites = {"automation"},
     effects = {
       {type = "unlock-recipe", recipe = "foundry"},
+      util.me.carbonrecipe() == "coke" and mods["SpaceG"] and {type = "unlock-recipe", recipe = "coking-plant"},
       util.me.carbonrecipe() and {type = "unlock-recipe", recipe = util.me.carbonrecipe()},
     },
     unit = {
@@ -43,8 +44,31 @@ data:extend({
     },
     order = "foundry",
   },
-   
+
 })
+
+if util.me.carbon() == "coke" and mods["SpaceG"] then
+  data:extend({
+    {
+      type = "item",
+      name = "coking-plant",
+      icon = "__bzfoundry__/graphics/icons/spaceG/apm_coking_plant_2.png",
+      icon_size = 128,
+      subgroup = "founding-machines",
+      order = "z[foundry]",
+      place_result = "coking-plant",
+      stack_size = 50
+    },
+    {
+      type = "recipe",
+      name = "coking-plant",
+      result = "coking-plant",
+      enabled = false,
+      ingredients = foundry_ingredients,
+    },
+
+  })
+end
 
 if mods.Krastorio2 then
   util.add_prerequisite("foundry", "kr-stone-processing")

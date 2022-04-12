@@ -1,12 +1,14 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.2.0
-Date: 2022-04-11
+Version: 0.2.1
+Date: 2022-04-12
   Changes:
     - Iron vanilla amount returned in Steel recipe for SpaceG playthrough. Player must always obtain iron in huge amounts for bullets and steel - that's the heart of Factorio.
     - Recipe category for coking added.
     - Misprint in "industrial-furnace" corrected.
     - Re-balancing coke chemical fuel properties for SpaceG (it doesn't give more energy, but gives less pollution comparing to coal 300%). Removing fuel properties would be even better to simplify game.
     - Fixed SpaceG recurring dependencies (steel-silica- steel-made crusher). Technology (Crusher-Silica-Foundry-Steel-Crusher) recurrence was fixed in SpaceG.
+    - Added coking plant chemical and coking category for electrical furnace. Resulting early game chain: 2 foundries need 1 coking-plant + 4 iron-producing furnaces.
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 2022-02-22
