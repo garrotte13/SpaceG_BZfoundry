@@ -3,6 +3,7 @@ local util = require("data-util")
 if util.me.enable() then
   util.set_to_founding("steel-plate")
   if mods["SpaceG"] then
+    --util.multiply_recipe("steel-plate", 2)
     util.add_ingredient("steel-plate", util.me.carbon(), 1)
   else
     util.replace_some_ingredient("steel-plate", "iron-plate", 1, util.me.carbon(), 1)
@@ -16,6 +17,7 @@ if util.me.enable() then
 
 
   util.set_to_founding("silicon")
+  --if mods["SpaceG"] then util.multiply_recipe("silicon", 2) end
   util.add_ingredient("silicon", util.me.carbon(), 1)
 
   util.set_to_founding("cermet")  -- from zirconium

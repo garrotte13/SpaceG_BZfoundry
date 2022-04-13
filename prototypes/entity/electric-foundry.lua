@@ -9,7 +9,7 @@ data:extend({
     icon = "__bzfoundry__/graphics/icons/foundry.png",
     icon_size = 64,
     flags = {"placeable-neutral", "placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "electric-foundry"},
+    minable = {mining_time = 0.6, result = "electric-foundry"},
     max_health = 300,
     corpse = "medium-small-remnants",
     vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },

@@ -4,7 +4,7 @@ local foundry_ingredients = {{"stone-brick", 20}, {"iron-plate", 10}, {"copper-p
 if mods.bzlead then table.insert(foundry_ingredients, {"lead-plate", 8}) end
 if mods.Krastorio2 or mods["aai-industry"] then
   table.insert(foundry_ingredients, {"sand", 10})
-elseif data.raw.item["silica"] and data.raw.technology["silica-processing"] and (not mods["SpaceG"]) then
+elseif data.raw.item["silica"] and data.raw.technology["silica-processing"] then
   table.insert(foundry_ingredients, {"silica", 20})
 end
 
@@ -12,8 +12,8 @@ data:extend({
   {
     type = "item",
     name = "foundry",
-    icon = "__bzfoundry__/graphics/icons/foundry.png",
-    icon_size = 64,
+    icon = mods["SpaceG"] and "__bzfoundry__/graphics/icons/spaceG/apm_puddling_furnace.png" or "__bzfoundry__/graphics/icons/foundry.png",
+    icon_size = mods["SpaceG"] and 128 or 64,
     subgroup = "founding-machines",
     order = "z[foundry]",
     place_result = "foundry",
@@ -55,7 +55,7 @@ if util.me.carbon() == "coke" and mods["SpaceG"] then
       icon = "__bzfoundry__/graphics/icons/spaceG/apm_coking_plant_2.png",
       icon_size = 128,
       subgroup = "founding-machines",
-      order = "z[foundry]",
+      order = "b[foundry]",
       place_result = "coking-plant",
       stack_size = 50
     },
@@ -74,7 +74,7 @@ if mods.Krastorio2 then
   util.add_prerequisite("foundry", "kr-stone-processing")
 elseif mods["aai-industry"] then
   util.add_prerequisite("foundry", "sand-processing")
-elseif not mods["SpaceG"] then
+else
   util.add_prerequisite("foundry", "silica-processing")
 end
 
@@ -102,11 +102,11 @@ data:extend({
     enabled = false,
     ingredients = {
       {"foundry", 1},
-      {"steel-plate", 10},
-      {"processing-unit", 4},
+      {"electric-furnace", 1},
+      {"advanced-circuit", 3},
       {"concrete", 10},
-      (data.raw.item["zirconia"] and {"zirconia", 10} or {"stone-brick", 10}), 
-      (data.raw.item["tungsten-plate"] and {"tungsten-plate", 5} or nil),
+      --(data.raw.item["zirconia"] and {"zirconia", 10} or {"stone-brick", 10}),
+      --(data.raw.item["tungsten-plate"] and {"tungsten-plate", 5} or nil),
     },
   },
   {
@@ -114,16 +114,18 @@ data:extend({
     name = "electric-foundry",
     icon_size = 256,
     icon = "__bzfoundry__/graphics/icons/technology/electric-foundry.png",
-    prerequisites = {"automation-3"},
+    prerequisites = {"advanced-material-processing-2"},
     effects = {
       {type = "unlock-recipe", recipe = "electric-foundry"},
     },
     unit = {
-      count = 200,
-      ingredients = {{"automation-science-pack", 1},
-                     {"logistic-science-pack", 1},
-                     {"chemical-science-pack", 1},
-                     {"production-science-pack", 1}},
+      count = 300,
+      ingredients = {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+       --{"production-science-pack", 1}
+                    },
       time = 45,
     },
     order = "foundry",
