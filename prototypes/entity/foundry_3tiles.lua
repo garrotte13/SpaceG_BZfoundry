@@ -107,7 +107,7 @@ data:extend({
         type = "burner",
         fuel_categories = {"chemical"},
         effectivity = 1,
-        emissions_per_minute = 9,
+        emissions_per_minute = 8,
         fuel_inventory_size = 1,
         light = {intensity = 0.6, size = 9.9, shift = {0.0, 0.0}, color = {r = 1.0, g = 0.5, b = 0.0}},
         smoke = smoke_puddling_furnace,
