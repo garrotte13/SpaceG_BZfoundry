@@ -7,5 +7,5 @@ if util.me.enable() then
   require("prototypes/coke")
   require("prototypes/foundry")
   if mods["SpaceG"] then require("prototypes/entity/foundry_3tiles")  else require("prototypes/entity/foundry") end
-  require("prototypes/entity/electric-foundry")
+  if mods["SpaceG"] then require("prototypes/entity/alt-electric-foundry")  else require("prototypes/entity/electric-foundry") end
 end

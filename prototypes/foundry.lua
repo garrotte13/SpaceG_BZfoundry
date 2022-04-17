@@ -82,8 +82,8 @@ data:extend({
   {
     type = "item",
     name = "electric-foundry",
-    icon = "__bzfoundry__/graphics/icons/electric-foundry.png",
-    icon_size = 128,
+    icon = mods["SpaceG"] and "__bzfoundry__/graphics/entity/spaceg/foundry_el/smelter_icon.png" or "__bzfoundry__/graphics/icons/electric-foundry.png",
+    icon_size = mods["SpaceG"] and 32 or 128,
     subgroup = "founding-machines",
     order = "z[foundryelectric]",
     place_result = "electric-foundry",
