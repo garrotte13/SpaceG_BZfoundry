@@ -66,7 +66,28 @@ if util.me.carbon() == "coke" and mods["SpaceG"] then
       enabled = false,
       ingredients = foundry_ingredients,
     },
-
+    {
+      type = "item",
+      name = "coking-plant-electric",
+      icon = "__bzfoundry__/graphics/entity/spaceG/foundry_el2/apm_steelworks-2.png",
+      icon_size = 128,
+      subgroup = "founding-machines",
+      order = "b[foundry]",
+      place_result = "coking-plant-electric",
+      stack_size = 50
+    },
+    {
+      type = "recipe",
+      name = "coking-plant-electric",
+      result = "coking-plant-electric",
+      enabled = false,
+      ingredients = {
+        {"coking-plant", 1},
+        {"electric-furnace", 1},
+        {"advanced-circuit", 3},
+        {"concrete", 10},
+      },
+    },
   })
 end
 
@@ -112,11 +133,12 @@ data:extend({
   {
     type = "technology",
     name = "electric-foundry",
-    icon_size = 256,
-    icon = "__bzfoundry__/graphics/icons/technology/electric-foundry.png",
+    icon_size = 128,
+    icon = "__bzfoundry__/graphics/entity/spaceG/foundry_el2/apm_steelworks-2.png",
     prerequisites = {"advanced-material-processing-2"},
     effects = {
       {type = "unlock-recipe", recipe = "electric-foundry"},
+      util.me.carbonrecipe() == "coke" and mods["SpaceG"] and {type = "unlock-recipe", recipe = "coking-plant-electric"},
     },
     unit = {
       count = 300,

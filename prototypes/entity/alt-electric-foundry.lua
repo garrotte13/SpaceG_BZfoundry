@@ -36,7 +36,6 @@ data:extend({
       energy_source =
       {
         type = "electric",
-        fuel_category = "chemical",
         effectivity = 1,
         emissions_per_minute = 2,
         usage_priority = "secondary-input",
@@ -52,15 +51,18 @@ data:extend({
         layers =
         {
           {
-            filename = "__bzfoundry__/graphics/entity/spaceg/foundry_el/smelter_sheet.png",
+            --filename = "__bzfoundry__/graphics/entity/spaceg/foundry_el/smelter_sheet.png",
+            filename = "__bzfoundry__/graphics/entity/spaceg/foundry_el/npress_sheet.png",
             priority = "medium",
             width = 256,
             height = 256,
             frame_count = 36,
             line_length = 6,
-            shift = {0.5, -0.8},
+            --shift = {0.5, -0.6},
+            shift = {0.6, -0.225},
             scale = 0.6,
-            animation_speed=0.1666667,
+            --animation_speed=0.1666667,
+            animation_speed=0.25,
           },
         }
       },
