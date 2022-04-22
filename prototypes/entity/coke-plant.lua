@@ -240,6 +240,12 @@ data:extend({
     emissions_per_minute = 2,
     usage_priority = "secondary-input",
   },
+  module_specification =
+  {
+    module_slots = 3,
+    module_info_icon_shift = {0, 0.8}
+  },
+  allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   working_visualisations =
   {
     {

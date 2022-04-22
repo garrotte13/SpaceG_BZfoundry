@@ -6,8 +6,8 @@ Date: 2022-04-12
     - Recipe category for coking added.
     - Misprint in "industrial-furnace" corrected.
     - Re-balancing coke chemical fuel properties (it doesn't give more energy per source coal mass, but gives less pollution comparing to coal).
-    - Added coking plant chemical and coking category for electrical furnace. Early game chain: 2 foundries need 1 coking-plant + 4 iron-producing steel-furnaces.
-    - Replaced 4x4 size chem foundry graphics with 3x3 from APM mod. 4x4 simply doesn't work out in early game breaking it into some kind of K2 disbalanced play.
+    - Added coking plant chemical and electrical (both 3x3). Game chain: 2 foundries need 1 coking-plant + 4 iron-producing steel-furnaces.
+    - Replaced 4x4 size chem foundry graphics with 3x3 from APM mod. 4x4 simply doesn't work out in early game breaking it into some kind of K2 disbalanced game.
     - Made electrical foundry available before processing units and production tech packs.
     - Added Bio residue probability in Coke co-products for Warmonger mod as a bit of reality in early game long before sulphur (real life co-product) is unlocked.
 ---------------------------------------------------------------------------------------------------
