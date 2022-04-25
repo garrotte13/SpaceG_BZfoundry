@@ -17,7 +17,7 @@ if util.me.enable() then
 
 
   util.set_to_founding("silicon")
-  --if mods["SpaceG"] then util.multiply_recipe("silicon", 2) end
+  if mods["SpaceG"] then util.multiply_recipe("silicon", 2) end
   util.add_ingredient("silicon", util.me.carbon(), 1)
 
   util.set_to_founding("cermet")  -- from zirconium

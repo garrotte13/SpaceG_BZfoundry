@@ -100,14 +100,14 @@ data:extend({
       selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
       crafting_categories = {"founding", futil.me.smelt() and "smelting" or nil},
       entity_info_icon_shift = {0, 0.4},
-      energy_usage = "180kW",
-      crafting_speed = 4,
+      energy_usage = "90kW",
+      crafting_speed = 2,
       energy_source =
       {
         type = "burner",
         fuel_categories = {"chemical"},
         effectivity = 1,
-        emissions_per_minute = 8,
+        emissions_per_minute = 4,
         fuel_inventory_size = 1,
         light = {intensity = 0.6, size = 9.9, shift = {0.0, 0.0}, color = {r = 1.0, g = 0.5, b = 0.0}},
         smoke = smoke_puddling_furnace,
